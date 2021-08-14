@@ -4,7 +4,7 @@
 
 ### Getting Started
 
-You can get the ASJS JavaScript library from our cdn link (https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/README.md). This will give you access to the JavaScript library (but not the complete set of [features](./#multiple-ways-to-use-asjs)). If you want to use all the tools of ASJS then you can download this project and run our [project tools]().
+You can get the ASJS JavaScript library from our cdn link (https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/README.md). This will give you access to the JavaScript library (but not the complete set of [features](#multiple-ways-to-use-asjs)). If you want to use all the tools of ASJS then you can download this project and run our [project tools](#).
 
 ### What is Assembly Script?
 
