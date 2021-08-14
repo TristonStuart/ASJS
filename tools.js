@@ -19,7 +19,7 @@ asCode.useExports("index.js");
 console.log(asCode.Exports.add(10, 20));`,
   indexHTML: `<html>
   <head>
-    <script src="https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/README.md"></script>
+    <script src="https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/ASJS_Library/dist/asjs.js"></script>
     <script src="./AssemblyScript/asExports.js"></script>
     <script src="./index.js></script>
   </head>
