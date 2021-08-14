@@ -4,7 +4,7 @@
 
 ### Getting Started
 
-You can get the ASJS JavaScript library from our cdn link (https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/README.md). This will give you access to the JavaScript library (but not the complete set of [features](#multiple-ways-to-use-asjs)). If you want to use all the tools of ASJS then you can download this project and run our [project tools](#).
+You can get the ASJS JavaScript library from our cdn link (https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/ASJS_Library/dist/asjs.js). This will give you access to the JavaScript library (but not the complete set of [features](#multiple-ways-to-use-asjs)). If you want to use all the tools of ASJS then you can download this project and run our [project tools](#).
 
 ### What is Assembly Script?
 
@@ -33,6 +33,6 @@ Another option is using ASJS to run a [typescript-parser](https://www.npmjs.com/
 
 #### Importing the library
 
-The easiest way to get the library is to include it in your script using our cdn link (https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/README.md). <br>
+The easiest way to get the library is to include it in your script using our cdn link (https://cdn.jsdelivr.net/gh/TristonStuart/ASJS@master/ASJS_Library/dist/asjs.js). <br>
 
 Another option is to download the project and build the library yourself (we use [WebPack](https://webpack.js.org/)) but you won't need to do that unless you are planning on making changes to the library.
