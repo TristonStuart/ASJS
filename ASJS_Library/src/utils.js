@@ -5,7 +5,7 @@
  * @returns {Object}
  */
 function readCommonHeader(ptr, memoryBuffer){
-  let U32 = memoryBuffer.U32 | new Int32Array(memoryBuffer);
+  let U32 = memoryBuffer.U32 || new Int32Array(memoryBuffer);
   var header = {
     rtSize: U32[ptr - 4 >>> 2],
     rtId: U32[ptr - 8 >>> 2],
