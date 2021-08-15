@@ -1,8 +1,9 @@
 /*
-  Library.js
+  library.js
   Exports all the exposed api functions for webpack.
   Entry point for webpack.
 */
+
 import { Utils } from "./utils";
 import { Types } from "./types";
 import { load } from "./loader";
@@ -35,4 +36,5 @@ class wasm {
   }
 }
 
-export { wasm, Types, Utils };
+let _api = {Types, Utils};
+export { wasm, _api };

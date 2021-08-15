@@ -1,3 +1,8 @@
+/*
+  loader.js
+  Api for loading a wasm buffer
+*/
+
 function instantiate(wasmBuffer){
   return WebAssembly.instantiate(wasmBuffer, {Date, module: {}, env:{abort: function(){console.log(arguments)}, seed: function(){}}});
 }

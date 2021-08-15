@@ -1,3 +1,8 @@
+/*
+  utils.js
+  Main utils used by asjs
+*/
+
 /**
  * Read the header of a complex data type from memory
  * @param {Number} ptr

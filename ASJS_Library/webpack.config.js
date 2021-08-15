@@ -5,7 +5,7 @@ module.exports = {
   output: {
     filename: "asjs.js",
     path: path.resolve(__dirname, 'dist'),
-    library: "ASJS",
+    library: "asjs",
     libraryTarget: "umd"
   },
   mode: "production"
