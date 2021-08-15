@@ -114,7 +114,7 @@ class Array extends Type {
     let outArray = [];
     let readArray = Utils.arrayFromMemory(pointer, memoryBuffer);
     for (let i = 0; i < readArray.length; i++){
-      outArray.push(structure.arrayType.fromMemory(i, memoryBuffer, (structure.arrayType.isStruct)? structure.arrayType : {}));
+      outArray.push(structure.arrayType.fromMemory(readArray[i], memoryBuffer, (structure.arrayType.isStruct)? structure.arrayType : {}));
     }
     return outArray;
   }
