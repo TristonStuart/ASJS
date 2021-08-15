@@ -28,7 +28,7 @@ function stringFromMemory(ptr, memoryBuffer){
   let length = header.rtSize / 2;
   let _string = "";
   for (let i=0; i < length; i++){
-    _string += U16[ptr + i >>> 1];
+    _string += String.fromCharCode(U16[ptr + i >>> 1]);
   }
   return _string;
 }
