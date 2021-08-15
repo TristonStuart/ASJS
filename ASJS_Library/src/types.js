@@ -3,13 +3,13 @@
   Contains all the base type info for the library.
 
   Notes:
-  Array.Struct = {arrayType: Type | ReturnType<Type.Struct>}
+  Array.Struct = {arrayType: Type | ReturnType<Type.Struct>, ...Type.Struct}
 */
 
 import { Utils } from "./utils";
 
 /**
- * @typedef {{arrayType: Type | ReturnType<Type.Struct>}} arrayStruct
+ * @typedef {{structure: {arrayType: Type | ReturnType<Type.Struct>}} & ReturnType<Type.Struct>} arrayStruct
  */
 
 /**
@@ -96,10 +96,18 @@ class Array extends Type {
   }
 
   /**
+   * Array Type Structure
+   * @param {ReturnType<Type.Struct> | Type} arrayType
+   */
+  static Struct(arrayType){
+    return {arrayType, isStruct: true, type: this.type, fromMemory: this.fromMemory};
+  }
+
+  /**
    * Get the value from the memory pointer (aka returned value)
    * @param {Number} pointer
    * @param {ArrayBuffer} memoryBuffer
-   * @param {arrayStruct} structure
+   * @param {ReturnType<Array.Struct>} structure
    * @returns {string}
    */
   static fromMemory(pointer, memoryBuffer, structure){
