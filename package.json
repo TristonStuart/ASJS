@@ -2,7 +2,6 @@
   "name": "asjs",
   "version": "1.0.0",
   "description": "ASJS is a tool to compile and link assembly script with javascript",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

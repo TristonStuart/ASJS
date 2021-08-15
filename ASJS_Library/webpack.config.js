@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/library.js",
+  entry: path.resolve(__dirname, 'src') + "/library.js",
   output: {
     filename: "asjs.js",
     path: path.resolve(__dirname, 'dist'),

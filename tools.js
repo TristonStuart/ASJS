@@ -5,13 +5,16 @@
 */
 
 const fs = require('fs');
+const webpack = require('webpack');
 
 let processArgs = process.argv.splice(2);
 let helpText = `-- ASJS Tools.js Help --
 Run tools.js like : node tools.js --command param1 param2
 Commands:
   --help : Show help menu
-  --project [name] : Creates a new project in ./Projects`;
+  --project [name] : Creates a new project in ./Projects
+  --buildLib: Builds the ASJS Library`;
+
 let basicFiles = {
   buildConfig: ``,
   indexJS: `let asCode = ASJS.loadAS("./AssemblyScript/index.wasm");
@@ -59,6 +62,21 @@ switch (processArgs[0]){
     }
 
     console.log(`done`);
+    break;
+  }
+  case `--buildLib`:{
+    let webpackConfig = require('./ASJS_Library/webpack.config');
+    const compiler = webpack(webpackConfig);
+    compiler.run(function(err, result){
+      if (err){
+        console.log(`WebPack Error : ${err}`);
+      }else {
+        console.log(`WebPack Result: ${result}`);
+      }
+      compiler.close((closeErr)=>{
+        console.log('compiler closed. Done');
+      });
+    });
     break;
   }
   default: console.log(helpText);
