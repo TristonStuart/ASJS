@@ -1,10 +1,10 @@
-function instantiate(){
+function instantiate(wasmBuffer){
   return WebAssembly.instantiate(wasmBuffer, {Date, module: {}, env:{abort: function(){console.log(arguments)}, seed: function(){}}});
 }
 
 function load(wasmBuffer){
   return new Promise((resolve, reject)=>{
-    instantiate().then(
+    instantiate(wasmBuffer).then(
       /**
        * 
        * @param {{instance: WebAssembly.Instance, module: WebAssembly.module}} module
