@@ -6,7 +6,7 @@
 
 import { Utils } from "./utils";
 import { Types } from "./types";
-import { load } from "./loader";
+import { load, loadSync } from "./loader";
 import { wrapType, wrapTypeApi } from "./typesWrapper";
 
 class wasm {
@@ -39,5 +39,5 @@ class wasm {
   }
 }
 
-let api = {Types, Utils};
+let api = {Types, Utils, WrapTypes: {wrapType, wrapTypeApi}, Loader: {load, loadSync}};
 export { wasm, api };
