@@ -81,7 +81,7 @@ class string extends Type {
    * @returns {string}
    */
   static fromMemory(pointer, memoryBuffer, structure){
-    new this(Utils.stringFromMemory(pointer, memoryBuffer));
+    return new this(Utils.stringFromMemory(pointer, memoryBuffer));
   }
 
   static type = "string";
