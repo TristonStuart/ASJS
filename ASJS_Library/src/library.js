@@ -7,6 +7,7 @@
 import { Utils } from "./utils";
 import { Types } from "./types";
 import { load } from "./loader";
+import { wrapType, wrapTypeApi } from "./typesWrapper";
 
 class wasm {
   /**
@@ -19,6 +20,7 @@ class wasm {
     this.Exports;
     this.Memory;
     this.Table;
+    this.Types;
     this.module;
     this.onLoad = onLoad;
     load(wasmBuffer).then(
@@ -31,10 +33,11 @@ class wasm {
       mainThis.Exports = module.instance.exports;
       mainThis.Memory = module.instance.exports.memory;
       mainThis.Table = module.instance.exports.table;
+      mainThis.Types = wrapTypeApi(Types, mainThis.Memory.buffer);
       mainThis.onLoad(mainThis);
     });
   }
 }
 
-let _api = {Types, Utils};
-export { wasm, _api };
+let api = {Types, Utils};
+export { wasm, api };
