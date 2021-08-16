@@ -7,7 +7,14 @@
 
 function wrapType(type, memoryBuffer){
   return class TypeWrapper extends type {
-    static fromMemory(pointer, structure){
+    static fromMemory(pointer, structure, _structure){
+      if (_structure){
+        /*
+          fromMemory was called like (pointer, buffer, structure)
+          We rewrite structure to the real structure (_structure)
+        */
+        structure = _structure;
+      }
       return type.fromMemory.apply(this, [pointer, memoryBuffer, structure]);
     }
   }
